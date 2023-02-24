@@ -2,7 +2,7 @@
 
 /**
  * more_numbers - nmbr fct
- * Bwave ICT file
+ * Favoredspecial file
  * Return: no return
  */
 
