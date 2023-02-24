@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "main.h"
+#include "main_0.c"
 /**
 * mul - multiplies two integers
 * @a: first integer
