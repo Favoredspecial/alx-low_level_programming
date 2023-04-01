@@ -1,53 +1,19 @@
+#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "lists.h"
 
 /**
- * _strlen - finds the length of a string
- * @str: string to find the length of the list
+ * free_list - Realease the memory allocated for a list
  *
- * Return: length of string
+ * @head: A pointer to the first node of the list to free
  */
-unsigned int _strlen(char *str)
+void free_list(list_t *head)
 {
-	unsigned int i;
-
-	for (i = 0; str[i]; i++)
-		;
-	return (i);
-}
-
-/**
- * add_node_end - adds a new node to the end of linked list
- * @head: double pointer to a linked list
- * @str: string to add to the new node
- *
- * Return: pointer to the new node
- */
-list_t *add_node_end(list_t **head, const char *str)
-{
-	list_t *new, *tmp;
-if (str == NULL)
-		return (NULL);
-	new = malloc(sizeof(list_t));
-	if (new == NULL)
-		return (NULL);
-	new->str = strdup(str);
-	if (new->str == NULL)
+	if (head)
 	{
-		free(new);
-		return (NULL);
+		free_list(head->next);
+		if (head->str)
+			free(head->str);
+		free(head);
 	}
-	new->len = _strlen(new->str);
-	new->next = NULL;
-	if (*head == NULL)
-	{
-		*head = new;
-		return (new);
-	}
-	tmp = *head;
-	while (tmp->next)
-		tmp = tmp->next;
-	tmp->next = new;
-	return (new);
 }
