@@ -1,14 +1,15 @@
 #include<stdio.h>
 
 /**
- * myStoryline - Apply the constructor attribute to myStoryline() so that it
+ * myStartupFun - Apply the constructor attribute to myStartupFun() so that it
  *   is executed before main()
- */void myStoryline(void) __attribute__ ((constructor));
+ */
+void myStartupFun(void) __attribute__ ((constructor));
 
 /**
- * myStoryline - implementation of myStoryline
+ * myStartupFun - implementation of myStartupFun
  */
-void myStoryline(void)
+void myStartupFun(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
