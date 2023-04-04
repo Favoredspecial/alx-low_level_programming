@@ -3,8 +3,8 @@
 /**
  * listint_len -the number of elements in a linked listint_t list.
  *
- * @h: head element 
- * 
+ * @h: head element
+ *
  * Return: number of elements
  *
  */
